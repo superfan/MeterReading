@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MeterReading</string>
+    <string name="text_copyright">Copyright © 2016 Shanghai3h</string>
+    <string name="title_activity_main">main</string>
+    <string name="title_activity_login">login</string>
+
+    <string name="label_login">登 录</string>
+    <string name="label_username">帐号</string>
+    <string name="label_password">密码</string>
+    <string name="text_username_not_null">帐号不能为空</string>
+    <string name="text_password_not_null">密码不能为空</string>
 </resources>

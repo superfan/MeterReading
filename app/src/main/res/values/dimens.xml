@@ -2,4 +2,62 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- 加载界面，字体大小 -->
+    <dimen name="loading_text_size">13dp</dimen>
+
+    <!-- 时间显示区域，接受时间、截至时间左右Padding -->
+    <dimen name="receive_time_padding_horizontal">10dp</dimen>
+    <dimen name="progressbar_min">20dp</dimen>
+    <dimen name="progressbar_max">20dp</dimen>
+
+    <!-- 控件水平间隔 -->
+    <dimen name="control_horizontal_seperater">15dp</dimen>
+    <!-- 控件垂直间隔 -->
+    <dimen name="control_vertical_seperater">10dp</dimen>
+
+    <!-- 字体大小定义 -->
+    <!-- 30px -->
+    <dimen name="text_size_xxxxlarge">20dp</dimen>
+    <!-- 28px -->
+    <dimen name="text_size_xxxlarge">19dp</dimen>
+    <!-- 24px -->
+    <dimen name="text_size_xxlarge">16dp</dimen>
+    <!-- 22px -->
+    <dimen name="text_size_xlarge">15dp</dimen>
+    <!-- 20px -->
+    <dimen name="text_size_large">13dp</dimen>
+    <!-- 18px -->
+    <dimen name="text_size_meduim">12dp</dimen>
+    <!-- 16px -->
+    <dimen name="text_size_small">11dp</dimen>
+    <!-- 14px -->
+    <dimen name="text_size_xsmall">9dp</dimen>
+    <!-- 12px -->
+    <dimen name="text_size_xxsmall">8dp</dimen>
+
+    <dimen name="paddingBottom1">10dp</dimen>
+
+    <dimen name="marginTop_5">5dp</dimen>
+    <dimen name="marginBottom_5">5dp</dimen>
+    <dimen name="marginLeft_10">10dp</dimen>
+    <dimen name="marginRight_10">10dp</dimen>
+    <dimen name="marginTop_10">10dp</dimen>
+    <dimen name="marginBottom_10">10dp</dimen>
+    <dimen name="marginTop_20">20dp</dimen>
+    <dimen name="marginBottom_20">20dp</dimen>
+    <dimen name="marginLeft_30">30dp</dimen>
+    <dimen name="marginRight_30">30dp</dimen>
+    <dimen name="marginTop_30">30dp</dimen>
+    <dimen name="marginBottom_30">30dp</dimen>
+    <dimen name="marginLeft_50">50dp</dimen>
+    <dimen name="marginRight_50">50dp</dimen>
+
+    <dimen name="height_50">50dp</dimen>
+
+    <!-- 按钮左右Padding距离 -->
+    <dimen name="button_padding">10dp</dimen>
+
+    <!-- 大按钮字体大小 -->
+    <dimen name="button_text_size_large">16dp</dimen>
 </resources>

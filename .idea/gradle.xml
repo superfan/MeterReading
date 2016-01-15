@@ -11,6 +11,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/dataprovider" />
             <option value="$PROJECT_DIR$/datautil" />
+            <option value="$PROJECT_DIR$/mobileutil" />
+            <option value="$PROJECT_DIR$/serverprovider" />
           </set>
         </option>
         <option name="myModules">
@@ -19,6 +21,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/dataprovider" />
             <option value="$PROJECT_DIR$/datautil" />
+            <option value="$PROJECT_DIR$/mobileutil" />
+            <option value="$PROJECT_DIR$/serverprovider" />
           </set>
         </option>
       </GradleProjectSettings>

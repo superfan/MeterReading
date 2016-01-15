@@ -8,4 +8,23 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="LoadingText">
+        <item name="android:textColor">@color/loading_text</item>
+        <item name="android:textSize">@dimen/loading_text_size</item>
+    </style>
+
+    <style name="ProgressBar">
+        <item name="android:minHeight">@dimen/progressbar_min</item>
+        <item name="android:minWidth">@dimen/progressbar_min</item>
+        <item name="android:maxHeight">@dimen/progressbar_max</item>
+        <item name="android:maxWidth">@dimen/progressbar_max</item>
+    </style>
+
+    <!-- 黑色背景，白色字体；登录、反馈按钮 -->
+    <style name="Button">
+        <item name="android:background">@drawable/button</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:textColor">@color/button_text</item>
+        <item name="android:textSize">@dimen/button_text_size_large</item>
+    </style>
 </resources>

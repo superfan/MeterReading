@@ -1,1 +1,1 @@
-include ':app', ':datautil', ':dataprovider'
+include ':app', ':datautil', ':dataprovider', ':mobileutil', ':serverprovider'

@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- 加载信息文字显示颜色 -->
+    <color name="loading_text">#fff</color>
+
+    <!-- 白色字体颜色 -->
+    <color name="text_white">#ffffff</color>
+    <color name="text_grey">#979797</color>
 </resources>
