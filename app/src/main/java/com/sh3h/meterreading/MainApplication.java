@@ -15,11 +15,9 @@ import timber.log.Timber;
 
 public class MainApplication extends Application {
     private ApplicationComponent mApplicationComponent;
-    private ConfigHelper mConfigHelper;
 
     public MainApplication() {
         mApplicationComponent = null;
-        mConfigHelper = null;
     }
 
     @Override
@@ -34,7 +32,6 @@ public class MainApplication extends Application {
         mApplicationComponent = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
                 .build();
-        mConfigHelper = getComponent().configHelper();
     }
 
     public static MainApplication get(Context context) {
@@ -43,10 +40,6 @@ public class MainApplication extends Application {
 
     public ApplicationComponent getComponent() {
         return mApplicationComponent;
-    }
-
-    public ConfigHelper getConfigHelper() {
-        return mConfigHelper;
     }
 
     // Needed to replace the component with a test specific one

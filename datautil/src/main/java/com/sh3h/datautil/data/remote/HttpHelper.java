@@ -5,6 +5,14 @@ import android.content.Context;
 import com.sh3h.datautil.data.entity.DUDeviceResult;
 import com.sh3h.datautil.data.entity.DULoginInfo;
 import com.sh3h.datautil.data.entity.DULoginResult;
+import com.sh3h.datautil.data.entity.DUTaskIdInfo;
+import com.sh3h.datautil.data.entity.DUTaskIdResult;
+import com.sh3h.datautil.data.entity.DUTaskInfo;
+import com.sh3h.datautil.data.entity.DUTaskResult;
+import com.sh3h.datautil.data.entity.DUUpdateInfo;
+import com.sh3h.datautil.data.entity.DUUpdateResult;
+import com.sh3h.datautil.data.entity.DUUserInfo;
+import com.sh3h.datautil.data.entity.DUUserResult;
 import com.sh3h.datautil.data.local.config.ConfigHelper;
 import com.sh3h.datautil.data.local.config.SystemConfig;
 import com.sh3h.datautil.data.entity.DUDeviceInfo;
@@ -15,6 +23,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import rx.Observable;
+import rx.functions.Func1;
 
 @Singleton
 public class HttpHelper {
@@ -41,7 +50,6 @@ public class HttpHelper {
     }
 
     /**
-     *
      * @param duDeviceInfo
      * @return
      */
@@ -55,13 +63,50 @@ public class HttpHelper {
         }
     }
 
-    public Observable<DULoginResult> login(DULoginInfo duLoginInfo) {
+    public Observable<DUUserResult> login(DULoginInfo duLoginInfo) {
         connect();
 
         if (isRestfulApi) {
             return null;
         } else {
-            return jsonRpcService.login(duLoginInfo);
+            return jsonRpcService.login(duLoginInfo)
+                    .flatMap(new Func1<DULoginResult, Observable<DUUserResult>>() {
+                        @Override
+                        public Observable<DUUserResult> call(DULoginResult duLoginResult) {
+                            DUUserInfo duUserInfo = new DUUserInfo(duLoginResult.getUserID());
+                            return jsonRpcService.getUserInfo(duUserInfo);
+                        }
+                    });
+        }
+    }
+
+    public Observable<DUUpdateResult> updateVersion(DUUpdateInfo duUpdateInfo) {
+        connect();
+
+        if (isRestfulApi) {
+            return null;
+        } else {
+            return jsonRpcService.updateVersion(duUpdateInfo);
+        }
+    }
+
+    public Observable<DUTaskIdResult> getTaskIds(DUTaskIdInfo duTaskIdInfo) {
+        connect();
+
+        if (isRestfulApi) {
+            return null;
+        } else {
+            return jsonRpcService.getTaskIds(duTaskIdInfo);
+        }
+    }
+
+    public Observable<DUTaskResult> getTask(DUTaskInfo duTaskInfo) {
+        connect();
+
+        if (isRestfulApi) {
+            return null;
+        } else {
+            return jsonRpcService.getTask(duTaskInfo);
         }
     }
 
@@ -81,4 +126,6 @@ public class HttpHelper {
         }
         isConnected = true;
     }
+
+
 }

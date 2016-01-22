@@ -11,11 +11,10 @@ public class DUUpdateInfo extends DURequest {
     }
 
     public DUUpdateInfo(int appVersion,
-                        int dataVersion,
-                        IDUHandler duHandler) {
+                        int dataVersion) {
         this.appVersion = appVersion;
         this.dataVersion = dataVersion;
-        this.duHandler = duHandler;
+        this.duHandler = null;
     }
 
     public int getAppVersion() {

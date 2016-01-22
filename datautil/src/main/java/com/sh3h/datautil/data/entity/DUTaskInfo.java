@@ -60,13 +60,12 @@ public class DUTaskInfo extends DURequest {
 
     public DUTaskInfo(String account,
                       int taskId,
-                      String deviceId,
-                      IDUHandler duHandler) {
+                      String deviceId) {
         this.filterType = FilterType.ALL;
         this.account = account;
         this.taskId = taskId;
         this.deviceId = deviceId;
-        this.duHandler = duHandler;
+        this.duHandler = null;
         this.volume = null;
     }
 

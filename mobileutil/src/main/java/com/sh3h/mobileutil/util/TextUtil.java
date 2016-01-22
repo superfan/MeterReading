@@ -132,4 +132,22 @@ public class TextUtil {
 		return content.substring(startIndex, endIndex);
 	}
 
+	/**
+	 * convert string to integer
+	 * @param value
+	 * @return
+     */
+	public static int getInt(String value) {
+		if (value == null) {
+			return 0;
+		}
+
+		try {
+			return Integer.parseInt(value);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return 0;
+	}
 }

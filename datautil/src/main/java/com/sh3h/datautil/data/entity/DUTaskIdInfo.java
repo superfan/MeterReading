@@ -8,9 +8,8 @@ public class DUTaskIdInfo extends DURequest {
 
     }
 
-    public DUTaskIdInfo(String account, IDUHandler duHandler) {
+    public DUTaskIdInfo(String account) {
         this.account = account;
-        this.duHandler = duHandler;
     }
 
     public String getAccount() {

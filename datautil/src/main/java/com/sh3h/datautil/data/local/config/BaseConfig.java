@@ -106,10 +106,14 @@ public class BaseConfig {
      */
     public int getInteger(String name, int defaultValue) {
         try {
-            return Integer.parseInt(getString(name));
+            if (mProperties != null) {
+                return Integer.parseInt(getString(name));
+            }
         } catch (Exception e) {
-            return defaultValue;
+            e.printStackTrace();
         }
+
+        return defaultValue;
     }
 
     /**
@@ -120,10 +124,14 @@ public class BaseConfig {
      */
     public double getDouble(String name, double defaultValue) {
         try {
-            return Double.parseDouble(getString(name));
+            if (mProperties != null) {
+                return Double.parseDouble(getString(name));
+            }
         } catch (Exception e) {
-            return defaultValue;
+            e.printStackTrace();
         }
+
+        return defaultValue;
     }
 
     /**
@@ -134,10 +142,14 @@ public class BaseConfig {
      */
     public boolean getBoolean(String name, boolean defaultValue) {
         try {
-            return Boolean.parseBoolean(getString(name));
+            if (mProperties != null) {
+                return Boolean.parseBoolean(getString(name));
+            }
         } catch (Exception e) {
-            return defaultValue;
+            e.printStackTrace();
         }
+
+        return defaultValue;
     }
 
     /**

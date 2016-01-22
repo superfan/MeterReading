@@ -303,11 +303,41 @@ public class ConfigHelper {
      *
      * @return
      */
-    public static File getKeyFilePath() {
+    public File getKeyFilePath() {
         File dir = new File(STORAGE_PATH, FOLDER_KEY);
         return new File(dir, FILE_KEY_CONFIG);
     }
 
+    /**
+     *
+     * @return
+     */
+    public File getVersionFilePath() {
+        File dir = new File(STORAGE_PATH, FOLDER_UPDATE);
+        return new File(dir, FILE_VERSION_UPDATE);
+    }
+
+    /**
+     *
+     * @return
+     */
+    public File getDBFilePath() {
+        File dir = new File(STORAGE_PATH, FOLDER_DATA);
+        return new File(dir, DB_NAME);
+    }
+
+    /**
+     *
+     * @return
+     */
+    public File getUpdateFolderPath() {
+        return new File(STORAGE_PATH, FOLDER_UPDATE);
+    }
+
+    /**
+     *
+     * @return
+     */
     public SystemConfig getSystemConfig() {
         if (!mSystemConfig.isRead()) {
             mSystemConfig.readProperties(getSystemConfigFilePath().getPath());
@@ -315,11 +345,28 @@ public class ConfigHelper {
         return mSystemConfig;
     }
 
+    /**
+     *
+     * @return
+     */
     public KeyConfig getKeyConfig() {
         if (!mKeyConfig.isRead()) {
             mKeyConfig.readProperties(getKeyFilePath().getPath());
         }
         return mKeyConfig;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public VersionConfig getVersionConfig() {
+        File file = getVersionFilePath();
+        if (file.exists() && (!mVersionConfig.isRead())) {
+            mVersionConfig.readProperties(file.getPath());
+        }
+
+        return mVersionConfig;
     }
 
     public String getKey() {

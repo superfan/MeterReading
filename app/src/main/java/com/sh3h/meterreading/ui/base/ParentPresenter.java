@@ -11,12 +11,10 @@ import rx.subscriptions.CompositeSubscription;
 
 public class ParentPresenter<P extends MvpView> extends BasePresenter<P> {
     protected final DataManager mDataManager;
-    protected final ConfigHelper mConfigHelper;
     protected CompositeSubscription mSubscription;
 
-    public ParentPresenter(DataManager dataManager, ConfigHelper configHelper) {
+    public ParentPresenter(DataManager dataManager) {
         mDataManager = dataManager;
-        mConfigHelper = configHelper;
         mSubscription = new CompositeSubscription();
     }
 

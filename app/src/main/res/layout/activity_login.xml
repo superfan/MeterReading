@@ -102,7 +102,7 @@
                     android:layout_below="@id/rl_password"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/marginTop_10"
+                    android:layout_marginTop="@dimen/marginTop_20"
                     android:layout_marginStart="@dimen/marginLeft_50"
                     android:layout_marginEnd="@dimen/marginRight_50"
                     android:text="@string/label_login" />

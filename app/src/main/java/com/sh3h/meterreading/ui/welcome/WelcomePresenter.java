@@ -20,10 +20,12 @@ import rx.schedulers.Schedulers;
 
 public class WelcomePresenter extends ParentPresenter<WelcomeMvpView> {
     private static final String TAG = "WelcomePresenter";
+    private ConfigHelper mConfigHelper;
 
     @Inject
     public WelcomePresenter(DataManager dataManager, ConfigHelper configHelper) {
-        super(dataManager, configHelper);
+        super(dataManager);
+        mConfigHelper = configHelper;
     }
 
     /**

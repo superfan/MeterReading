@@ -114,9 +114,11 @@ public class DUUpdateResult extends DUResponse {
     }
 
     private List<Item> itemList;
+    private DUUpdateInfo duUpdateInfo;
 
     public DUUpdateResult() {
         itemList = null;
+        duUpdateInfo = null;
     }
 
     public List<Item> getItemList() {
@@ -125,5 +127,13 @@ public class DUUpdateResult extends DUResponse {
 
     public void setItemList(List<Item> itemList) {
         this.itemList = itemList;
+    }
+
+    public DUUpdateInfo getDuUpdateInfo() {
+        return duUpdateInfo;
+    }
+
+    public void setDuUpdateInfo(DUUpdateInfo duUpdateInfo) {
+        this.duUpdateInfo = duUpdateInfo;
     }
 }

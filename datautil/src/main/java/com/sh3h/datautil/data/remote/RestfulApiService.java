@@ -3,7 +3,7 @@ package com.sh3h.datautil.data.remote;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.sh3h.datautil.BuildConfig;
+//import com.sh3h.datautil.BuildConfig;
 import com.sh3h.datautil.data.model.Ribot;
 
 import java.util.List;
@@ -30,8 +30,8 @@ public interface RestfulApiService {
             OkHttpClient okHttpClient = new OkHttpClient();
             okHttpClient.interceptors().add(new UnauthorisedInterceptor(bus));
             HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-            logging.setLevel(BuildConfig.DEBUG ? HttpLoggingInterceptor.Level.BODY
-                    : HttpLoggingInterceptor.Level.NONE);
+            logging.setLevel(true ? HttpLoggingInterceptor.Level.BODY
+                    : HttpLoggingInterceptor.Level.NONE); // BuildConfig.DEBUG
             okHttpClient.interceptors().add(logging);
 
             Gson gson = new GsonBuilder()

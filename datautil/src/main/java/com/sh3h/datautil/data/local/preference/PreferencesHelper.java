@@ -14,19 +14,25 @@ import javax.inject.Singleton;
 
 @Singleton
 public class PreferencesHelper {
-    public static final String PREF_FILE_NAME = "android_boilerplate_pref_file";
+    public static final String PREF_FILE_NAME = "android_shanghai3h_pref_file";
 
-    private final SharedPreferences mPref;
-    private final ConfigHelper mConfigHelper;
+    private final Context mContext;
+    private UserSession mUserSession;
+    //private final SharedPreferences mPref;
 
     @Inject
-    public PreferencesHelper(@ApplicationContext Context context,
-                             ConfigHelper configHelper) {
-        mPref = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
-        mConfigHelper = configHelper;
+    public PreferencesHelper(@ApplicationContext Context context) {
+        //mPref = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
+        mContext = context;
+        mUserSession = new UserSession(mContext);
     }
 
     public void clear() {
-        mPref.edit().clear().apply();
+        //mPref.edit().clear().apply();
     }
+
+    public UserSession getUserSession() {
+        return mUserSession;
+    }
+
 }

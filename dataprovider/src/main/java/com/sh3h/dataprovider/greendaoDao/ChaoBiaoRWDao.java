@@ -232,7 +232,7 @@ public class ChaoBiaoRWDao extends AbstractDao<ChaoBiaoRW, Void> {
         qb.where(Properties.S_ChaoBiaoYBH.eq(chaoBiaoYBH));
         qb.orderDesc(Properties.I_ZhangWuNY);
 
-        return qb.list() == null? null: qb.list();
+        return qb.list();
 
     }
 

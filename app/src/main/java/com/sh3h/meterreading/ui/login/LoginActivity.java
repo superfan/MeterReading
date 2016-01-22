@@ -1,6 +1,7 @@
 package com.sh3h.meterreading.ui.login;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 
 import com.sh3h.meterreading.R;
 import com.sh3h.meterreading.ui.base.BaseActivity;
+import com.sh3h.meterreading.ui.main.MainActivity;
 import com.sh3h.mobileutil.util.ApplicationsUtil;
 import com.sh3h.mobileutil.util.TextUtil;
 
@@ -40,6 +42,16 @@ public class LoginActivity extends BaseActivity
         ButterKnife.bind(this);
 
         mSubmitButton.setOnClickListener(this);
+
+        mLoginPresenter.attachView(this);
+        mLoginPresenter.init();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        mLoginPresenter.detachView();
     }
 
     @Override
@@ -60,12 +72,25 @@ public class LoginActivity extends BaseActivity
     }
 
     @Override
-    public void onSuccess() {
+    public void updateUserInfo(String account, String password) {
+        if ((!TextUtil.isNullOrEmpty(account)) && (!TextUtil.isNullOrEmpty(password))) {
+            mUserNameEditText.setText(account);
+            mUserNameEditText.setSelection(account.length());
+            mPasswordEditText.setText(password);
+        }
+    }
 
+    @Override
+    public void onCompleted() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
     public void onError(String message) {
-
+        if (!TextUtil.isNullOrEmpty(message)) {
+            ApplicationsUtil.showMessage(this, message);
+        }
     }
 }

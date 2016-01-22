@@ -4,6 +4,7 @@ import com.sh3h.meterreading.ui.login.LoginActivity;
 import com.sh3h.meterreading.ui.main.MainActivity;
 import com.sh3h.meterreading.injection.annotation.PerActivity;
 import com.sh3h.meterreading.injection.module.ActivityModule;
+import com.sh3h.meterreading.ui.task.TaskListActivity;
 import com.sh3h.meterreading.ui.welcome.WelcomeActivity;
 
 import dagger.Component;
@@ -17,4 +18,5 @@ public interface ActivityComponent {
     void inject(WelcomeActivity mainActivity);
     void inject(LoginActivity loginActivity);
     void inject(MainActivity mainActivity);
+    void inject(TaskListActivity taskListActivity);
 }
